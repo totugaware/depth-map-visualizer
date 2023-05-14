@@ -3,9 +3,8 @@ import React, { useState, useEffect,useRef } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button'; 
 import axios from 'axios'
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 function App() {
 
@@ -15,12 +14,8 @@ function App() {
   const currentPrice = "/fapi/v1/ticker/price"
 
   
-   const [orders, setOrders] = useState({}) 
-   const [labels,setLabels] = useState([]);
    const [bidsG, setBidsG] = useState([])
    const [asksG, setAsksG] = useState([])
-   const [data, setData] = useState([{}]);
-
    const [btcPrice, setBtcPrice] = useState(''); 
 
    async function getCurrentPrice(symbol) {
